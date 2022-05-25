@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- meta -->
+    <meta name="description" content="Covid 19 Detector Using Deep Learning Model">
+    <meta name="author" content="Omar Khalil, John Aziz">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta property="og:site_name" content="CovDec">
+    <meta property="og:locale" content="en_IE" />
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    {% block meta %}
+    {% endblock %}
+    <!-- /meta -->
+
+    <!-- styles -->
+    <link type="text/css" rel="stylesheet" href="/static/css/styles.css">
+    <!-- /styles-->
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/ico/favicon-16x16.png">
+    <link rel="manifest" href="/static/ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- /favicons -->
+</head>
+
+<body>
+    <div>
+        <div class="text-primary bg-primary py-20">
+            <!-- Header -->
+            <header class="w-inline mx-auto max-w-screen-xl s-px-12 h-24 top-0 bg-primary z-10">
+                <nav class="px-10 lg-px-32 lg-px-48 mt-auto h-full flex space-x-12 items-center justify-start text-primary" aria-label="Main Navigation">
+                    <ul class="s-flex flex-grow items-center space-x-6 text-lg">
+                        <li></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/">About</a></li>
+                        <li><a href="/">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            {% block content %}{% endblock %}
+        </div>
+        <footer class="pt-24 pb-5 flex-col-reverse items-center w-flex-row flex justify-around mx-auto bg-primary">
+            <p class="text-secondary text-center">©
+                <!-- -->2022
+                <!-- -->Omar & John
+            </p>
+                <a class="mx-2" href="/" target="_blank" rel="nofollow noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="26" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">    
+                        <title>Facebook</title>
+                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+                    </svg>
+                </a>
+                <a class="mx-2" href="/" target="_blank" rel="nofollow noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+                        <title>Twitter</title>
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                    </svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+{% block script %}{% endblock %}
+</body>
+
+</html>
