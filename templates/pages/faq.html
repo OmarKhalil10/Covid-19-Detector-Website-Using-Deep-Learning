@@ -13,12 +13,11 @@
 <link rel="stylesheet" href="assets/vendors/slick/slick.css">
 <link rel="stylesheet" href="assets/vendors/slick/slick-theme.css">
 <link rel="stylesheet" href="assets/vendors/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
-<link rel="stylesheet" href="assets/vendors/animate-css/animate.css">
 
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
-<body data-scroll-animation="true">
+<body>
 <div class="body_wrapper">
 
 <div class="preloader">
@@ -29,7 +28,6 @@
 </div>
 </div>
 
-
 <div class="mobile_canvus_menu">
 <div class="close_btn">
 <img src="assets/images/icon/close-dark.png" alt>
@@ -37,7 +35,7 @@
 <div class="menu_part_lux">
 <ul class="menu_list wd_scroll">
 <li><a href>Home</a></li>
-<li>
+<li class="active">
 <a href>Prevention
 <i class="linearicons-chevron-down"></i>
 </a>
@@ -116,27 +114,27 @@
 <div class="row">
 <div class="col-lg-12">
 <div class="form-group">
-<input class="form-control" type="text" id="name" name="name" placeholder required>
+<input class="form-control" type="text" id="a_name" name="a_name" placeholder required>
 <label><i class="linearicons-user"></i>Your Name</label>
 </div>
 </div>
 <div class="col-lg-12">
 <div class="form-group">
-<input class="form-control" type="text" id="email" name="email" placeholder required>
+<input class="form-control" type="text" id="a_email" name="a_email" placeholder required>
 <label><i class="linearicons-envelope-open"></i>Your Email
 Address</label>
 </div>
 </div>
 <div class="col-lg-12">
 <div class="form-group">
-<input class="form-control" type="text" id="number" name="number" placeholder required>
+<input class="form-control" type="text" id="a_number" name="a_number" placeholder required>
 <label><i class="linearicons-telephone"></i>Your Phone
 Number</label>
 </div>
 </div>
 <div class="col-lg-12">
 <div class="form-group">
-<textarea name="message" id="message" cols="30" rows="10" class="form-control" required></textarea>
+<textarea name="a_message" id="a_message" cols="30" rows="10" class="form-control" required></textarea>
 <label><i class="linearicons-document"></i>Your Message</label>
 </div>
 </div>
@@ -173,7 +171,7 @@ by <span>creakits</span>
 </section>
 
 
-<header class="header_area">
+<header class="header_area white_header">
 <ul class="nav menu_social flex-column">
 <li>
 <a href="#"><i class="fab fa-facebook"></i></a>
@@ -188,13 +186,16 @@ by <span>creakits</span>
 <div class="main_menu">
 <div class="container">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<a class="navbar-brand" href><img src="assets/images/logo.png" srcset="assets/images/logo-2x.png 2x" alt></a>
+<a class="navbar-brand" href>
+<img src="assets/images/logo-2.png" srcset="assets/images/logo-2-2x.png 2x" alt>
+<img src="assets/images/logo.png" srcset="assets/images/logo-2x.png 2x" alt>
+</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 <ul class="nav navbar-nav ml-auto">
-<li class="active"><a href>Home</a></li>
+<li><a href>Home</a></li>
 <li class="dropdown submenu">
 <a class="dropdown-toggle" data-toggle="dropdown" href="prevention.html" role="button" aria-haspopup="true" aria-expanded="false">Prevention </a>
 <i class="linearicons-chevron-down mobile_dropdown" aria-hidden="true" data-toggle="dropdown"></i>
@@ -260,11 +261,13 @@ by <span>creakits</span>
 <ul class="nav">
 <li>
 <div class="search_btn" data-toggle="modal" data-target="#exampleModal">
+<img src="assets/images/icon/search-white.png" alt>
 <img src="assets/images/icon/search.png" alt>
 </div>
 </li>
 <li>
 <div class="menu_btn">
+<img src="assets/images/icon/burger-white.png" alt>
 <img src="assets/images/icon/burger.png" alt>
 </div>
 </li>
@@ -274,396 +277,109 @@ by <span>creakits</span>
 </header>
 
 
-<section class="home_banner_area">
+<section class="faq_breadcrumb_area">
+<img class="overlay_bg" src="assets/images/about/worldmap2.png" alt>
 <div class="container">
-<div class="row home_banner_inner">
-<div class="col-sm-7">
-<h5 class="wow fadeInUp" data-wow-delay="300ms">Stop COVID-19</h5>
-<h3 class="wow fadeInUp" data-wow-delay="500ms">How can we fight together against Coronavirus?
-</h3>
-<p class="wow fadeInUp" data-wow-delay="400ms">
-It’s never been clearer that we’re all global citizens,
-<br>and we all have a part to play. The novel strain of<br>
-coronavirus, has officially reached pandemic proportions.
-</p>
-<a class="main_btn wow fadeInLeft" data-wow-delay="300ms" href="#">How to Prevent</a>
-<div class="row home_option">
-<div class="col-lg-6 wow fadeIn" data-wow-delay="300ms">
-<div class="media">
-<div class="d-flex">
-<i class="linearicons-shield-check"></i>
+<div class="breadcrumb_content text-center">
+<h6>Frequently Asked Questions</h6>
+<h2>Find answers about Coronavirus</h2>
+<form action="#" class="faq_search">
+<div class="control-with-icon">
+<input type="text" class="form-control" placeholder="Start typing your question..." required>
+<span class="control-icon"><i class="linearicons-funnel"></i></span>
 </div>
-<div class="media-body">
-<h4>Protection</h4>
-<p>How to protect yourself</p>
-</div>
-</div>
-</div>
-<div class="col-lg-6 wow fadeIn" data-wow-delay="400ms">
-<div class="media">
-<div class="d-flex">
-<i class="linearicons-pulse"></i>
-</div>
-<div class="media-body">
-<h4>Symptoms</h4>
-<p>Check basic symptoms</p>
-</div>
-</div>
-</div>
-<div class="col-lg-6 wow fadeIn" data-wow-delay="500ms">
-<div class="media">
-<div class="d-flex">
-<i class="linearicons-bubbles"></i>
-</div>
-<div class="media-body">
-<h4>Appointment</h4>
-<p>Get online consultation</p>
-</div>
-</div>
-</div>
-<div class="col-lg-6 wow fadeIn" data-wow-delay="600ms">
-<div class="media">
-<div class="d-flex">
-<i class="linearicons-document2"></i>
-</div>
-<div class="media-body">
-<h4>About COVID-19</h4>
-<p>Read more about coronavirus</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-sm-5">
-<img class="img-fluid wow fadeInRight" data-wow-delay="400ms" src="assets/images/svg/home-banner-cleaner.svg" alt>
-</div>
+</form>
 </div>
 </div>
 </section>
 
 
-<section class="check_now_area">
-<div class="container">
-<div class="row m-0 justify-content-between">
-<div class="left">
-<div class="media">
-<div class="d-flex">
-<img src="assets/images/check-1.png" alt>
-<img src="assets/images/check-2.png" alt>
-<img src="assets/images/check-3.png" alt>
- </div>
-<div class="media-body">
-<h4>Think you might be affected?</h4>
-<p>
-Try our simple coronavirus checker to find out what you need
-to do.
-</p>
-</div>
-</div>
-</div>
-<div class="right">
-<a class="icon_btn wow fadeInRight" data-wow-delay="400ms" href="#">Check now <i class="linearicons-arrow-right"></i></a>
-</div>
-</div>
-</div>
-</section>
-
-
-<section class="home_about_corona">
-<div class="container">
-<div class="row">
-<div class="col-lg-6">
-<div class="home_ab_img wow fadeInUp" data-wow-delay="400ms">
-<img src="assets/images/home-ab-img.png" alt>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="home_ab_text">
-<div class="home_ab_text_inner">
-<div class="home_ab_item">
-<h6>COVID-19 the disease</h6>
-<h4>About the Coronavirus</h4>
-<p>
-Coronavirus disease 2019 (COVID-19) is an infectious
-disease caused by severe acute respiratory syndrome
-coronavirus 2. The disease was first identified in 2019 in
-Wuhan, the capital of Hubei, China, and has since spread
-globally, resulting in the 2019–2020 coronavirus pandemic.
-</p>
-</div>
-<div class="home_ab_item">
-<h4>What is the COVID-19?</h4>
-<p>
-COVID-19 is a new strain of coronavirus that has not been
-previously identified in humans. It was first identified
-in Wuhan, Hubei Province, China, where it has caused a
-large and ongoing outbreak. It has since spread more
-widely in China.
-</p>
-<a class="text_btn" href="#">Read more about <i class="linearicons-arrow-right"></i></a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-
-<section class="world_wide_tracker pad_top">
-<div class="container">
-<img class="tracker_map" src="assets/images/tracker-map-bg.png" alt>
-<div class="tracker_text">
-<h5>Worldwide Tracker</h5>
-<h2>Confirmed Coronavirus Cases</h2>
-<p>Last updated: April 08, 2020, 01:43 GMT</p>
-</div>
-<div class="row tracker_inner">
-<div class="col-lg-3 col-6 wow fadeIn" data-wow-delay="300">
-<div class="media">
-<div class="d-flex">
-<img src="assets/images/icon/corona-red-1.png" alt>
-</div>
-<div class="media-body">
-<h2 id="total_cases"></h2>
-<p>Total Cases</p>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-6 wow fadeIn" data-wow-delay="400">
-<div class="media">
-<div class="d-flex">
-<img src="assets/images/icon/corona-black-1.png" alt>
-</div>
-<div class="media-body">
-<h2 id="total_deaths"></h2>
-<p>Total Deaths</p>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-6 wow fadeIn" data-wow-delay="500">
-<div class="media">
-<div class="d-flex">
-<img src="assets/images/icon/corona-green-1.png" alt>
-</div>
-<div class="media-body">
-<h2 id="total_recovered"></h2>
-<p>Recovered</p>
- </div>
-</div>
-</div>
-<div class="col-lg-3 col-6 wow fadeIn" data-wow-delay="600">
-<div class="media">
-<div class="d-flex">
-<img src="assets/images/icon/corona-yellow-1.png" alt>
-</div>
-<div class="media-body">
-<h2 id="new_cases"></h2>
-<p>New Cases</p>
-</div>
-</div>
-</div>
-</div>
-<div class="tracker_btn">
-<a class="green_btn wow fadeInUp" data-wow-delay="500" href="#"><i class="linearicons-earth-lock"></i> See
-Live
-Track</a>
-</div>
-</div>
-</section>
-
-
-<section class="symptoms_area">
-<div class="container">
-<ul class="nav image_list">
-<li><img src="assets/images/symptoms-user/sm-1.png" alt></li>
-<li><img src="assets/images/symptoms-user/sm-2.png" alt></li>
-<li><img src="assets/images/symptoms-user/sm-3.png" alt></li>
-</ul>
-<div class="title_text wow fadeInUp" data-wow-delay="400ms">
-<h5>Symptoms of COVID-19</h5>
-<h2>What are the basic symptoms?</h2>
-</div>
-<div class="row symptoms_inner">
-<div class="col-lg-6 wow fadeInUp" data-wow-delay="400ms">
-<div class="symptoms_item">
-<div class="media">
-<div class="d-flex">
-<img src="assets/images/symptoms-user/symptoms-1.png" alt>
-</div>
-<div class="media-body">
-<h4>High fever</h4>
-<p>
-Fever is a key symptom, experts say. Don't fixate on a
-number, but know it's not a fever until temperature
-reaches at least 39°C.
-</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6 wow fadeInUp" data-wow-delay="500ms">
-<div class="symptoms_item">
-<div class="media">
-<div class="d-flex">
-<img src="assets/images/symptoms-user/symptoms-2.png" alt>
-</div>
-<div class="media-body">
-<h4>Sortness of Breath</h4>
-<p>
-You feel hot to touch on your chest or back It is a common
-sign and also may appear in 2-10 days if you affected.
-</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6 wow fadeInUp" data-wow-delay="600ms">
-<div class="symptoms_item">
-<div class="media">
-<div class="d-flex">
-<img src="assets/images/symptoms-user/symptoms-3.png" alt>
-</div>
-<div class="media-body">
-<h4>Dry Cough</h4>
-<p>
-Coughing is another key symptom, but it's not just any
-cough, said Schaffner. It should be a dry cough that you
-feel in your chest.
-</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6 wow fadeInUp" data-wow-delay="700ms">
-<div class="symptoms_item">
-<div class="media">
-<div class="d-flex">
-<img src="assets/images/symptoms-user/symptoms-4.png" alt>
-</div>
-<div class="media-body">
-<h4>Headache</h4>
-<p>
-Around 1 out of every 6 people who gets COVID-19 becomes
-seriously ill and develops difficulty breathing or
-shortness of breath.
-</p>
-</div>
-</div>
-</div>
-</div>
-</div>
- </div>
-</section>
-
-
-<section class="protect_yourself_area p_100">
+<section class="coronavirus_question_area">
 <div class="container">
 <div class="main_title text-center">
-<h5>What you need to do</h5>
-<h2>How to protect yourself?</h2>
+<h2>Top questions</h2>
 </div>
-<div class="row protect_inner">
-<div class="col-lg-6">
-<div class="row protect_list_inner">
-<div class="col-6">
-<div class="protect_list_item">
-<div class="protect_list_title">
-<h3>You should do</h3>
-<h6>Be sure to follow it</h6>
+<div class="row">
+<div class="col-lg-4 col-md-6 col-sm-12 col-6">
+<a href="#" class="corona_question">
+<div class="icon">
+<i class="linearicons-first-aid"></i>
 </div>
-<ul class="nav flex-column">
+What are the symptoms?
+</a>
+</div>
+<div class="col-lg-4 col-md-6 col-sm-12 col-6">
+<a href="#" class="corona_question">
+<div class="icon">
+<i class="linearicons-eye-dropper"></i>
+</div>
+Should I get tested?
+</a>
+</div>
+<div class="col-lg-4 col-md-6 col-sm-12 col-6">
+<a href="#" class="corona_question">
+<div class="icon">
+<i class="linearicons-earth"></i>
+</div>
+How does it spread?
+</a>
+</div>
+<div class="col-lg-4 col-md-6 col-sm-12 col-6">
+<a href="#" class="corona_question">
+<div class="icon">
+<i class="linearicons-bag-dollar"></i>
+</div>
+Can I get financial help?
+</a>
+</div>
+<div class="col-lg-4 col-md-6 col-sm-12 col-6">
+<a href="#" class="corona_question">
+<div class="icon">
+<i class="linearicons-chart-growth"></i>
+</div>
+How do I reduce my risk?
+</a>
+</div>
+<div class="col-lg-4 col-md-6 col-sm-12 col-6">
+<a href="#" class="corona_question">
+<div class="icon">
+<i class="linearicons-plane"></i>
+</div>
+Can I travel?
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="common_question_area">
+<div class="container">
+<div class="row">
+<div class="col-lg-6 col-md-6">
+<div class="common_question_item">
+<h3>How to protect yourself?</h3>
+<ul class="list-unstyled question_list">
+<li><a href="#">Am I at risk?</a></li>
 <li>
-<a href="#"><i class="linearicons-home4"></i>Stay at home</a>
-</li>
-<li>
-<a href="#"><i class="linearicons-desk-tape"></i>Wear mask</a>
-</li>
-<li>
-<a href="#"><i class="linearicons-tissue"></i>Always use
-tissues</a>
-</li>
-<li>
-<a href="#"><i class="linearicons-couch"></i>Disinfect your
-home</a>
-</li>
-<li>
-<a href="#"><i class="linearicons-rain"></i>Wash your hands</a>
-</li>
-<li>
-<a href="#"><i class="linearicons-thermometer"></i>Frequent
-self-isolation</a>
-</li>
-<li>
-<a href="#"><i class="linearicons-bottle"></i>Frequent
-waterintake</a>
-</li>
+<a href="#">Why do you need to wear cloth face coverings?</a>
+ </li>
+<li><a href="#">How can I manage anxiety and stress?</a></li>
 </ul>
-</div>
-</div>
-<div class="col-6">
-<div class="protect_list_item red">
-<div class="protect_list_title">
-<h3>You should avoid</h3>
-<h6>Be sure to follow it</h6>
-</div>
-<ul class="nav flex-column">
-<li>
-<a href="#"><i class="linearicons-man-woman"></i>Social
-distance</a>
-</li>
-<li>
-<a href="#"><i class="linearicons-paw"></i>Avoid animals</a>
-</li>
-<li>
-<a href="#"><i class="linearicons-woman"></i>Don't touch your
-face</a>
-</li>
-<li>
-<a href="#"><i class="linearicons-hand"></i>Avoid handshaking</a>
-</li>
-<li>
-<a href="#"><i class="linearicons-chair"></i>Avoid infected
-surfaces</a>
-</li>
-<li>
-<a href="#"><i class="linearicons-drop-crossed"></i>Avoid
-droplets</a>
-</li>
-<li>
-<a href="#"><i class="linearicons-plane-crossed"></i>Don’t
-travel</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="protect_self_text">
-<h3>What does self-isolation involve?</h3>
-<p>
-If you need to self-isolate, you should take action
-immediately. You must stay inside and avoid all contact with
-other people.
-</p>
-<a class="text_btn" href="#">How else can you protect yourself?
+<a class="text_btn" href="#">View all questions about
 <i class="linearicons-arrow-right"></i></a>
 </div>
 </div>
-<div class="col-lg-6">
-<div class="protect_img text-center apps_craft_animation">
-<img class="img-fluid wow fadeIn" data-wow-delay="500ms" src="assets/images/protect-img.png" alt>
-<ul class="nav">
-<li><img src="assets/images/icon/project-virus-1.png" alt></li>
-<li><img src="assets/images/icon/project-virus-2.png" alt></li>
-<li><img class="layer layer2" data-depth="0.5" src="assets/images/icon/project-virus-3.png" alt></li>
-<li><img src="assets/images/icon/project-virus-4.png" alt></li>
-<li><img src="assets/images/icon/project-virus-5.png" alt></li>
-<li><img src="assets/images/icon/project-virus-6.png" alt></li>
-<li><img src="assets/images/icon/project-virus-7.png" alt></li>
-<li><img src="assets/images/icon/project-virus-8.png" alt></li>
-<li><img class="layer layer2" data-depth="0.5" src="assets/images/icon/project-virus-9.png" alt></li>
-<li><img src="assets/images/icon/project-virus-10.png" alt></li>
+<div class="col-lg-6 col-md-6">
+<div class="common_question_item">
+<h3>What to do if you feel sick?</h3>
+<ul class="list-unstyled question_list">
+<li><a href="#">What are the symptoms of COVID-19?</a></li>
+<li><a href="#">Should I get tested?</a></li>
+<li>
+<a href="#">What should I do if someone in my house gets sick?</a>
+</li>
 </ul>
+<a class="text_btn" href="#">View all questions about
+<i class="linearicons-arrow-right"></i></a>
 </div>
 </div>
 </div>
@@ -671,194 +387,120 @@ other people.
 </section>
 
 
-<section class="washing_process_area pad_btm">
+<section class="more_question_area">
 <div class="container">
-<div class="main_title text-center white">
-<h5>Hand washing process</h5>
-<h2>How to wash your Hands</h2>
-</div>
-<div class="washing_process_inner row">
-<div class="col-lg-2 col-sm-4 col-6 wow fadeIn" data-wow-delay="400ms">
-<div class="washing_item">
-<div class="icon">
-<img src="assets/images/icon/washing-1.png" alt>
-<div class="number">
-1
-</div>
-</div>
-<p><span>Apply soap</span> and ruv your hands together</p>
-</div>
-</div>
-<div class="col-lg-2 col-sm-4 col-6 wow fadeIn" data-wow-delay="500ms">
-<div class="washing_item">
-<div class="icon">
-<img src="assets/images/icon/washing-2.png" alt>
-<div class="number">
-2
+<div class="row more_question_inner">
+<div class="col-lg-4 col-sm-6">
+<div class="more_question_item">
+<h3>Symptoms and testing</h3>
+<ul class="list-unstyled question_list">
+<li><a href="#">Should I be tested for COVID-19?</a></li>
+<li>
+<a href="#">What are the symptoms and complications that COVID-19 can
+cause?</a>
+</li>
+<li>
+<a href="#">Where can I get tested for COVID-19?</a>
+</li>
+</ul>
+<a class="text_btn" href="#">View all <i class="linearicons-arrow-right"></i></a>
 </div>
 </div>
-<p>
-<span>Use one hand</span> to rub the back of the other hand
-and vice versa
-</p>
+<div class="col-lg-4 col-sm-6">
+<div class="more_question_item">
+<h3>Traveling</h3>
+<ul class="list-unstyled question_list">
+<li>
+<a href="#">Should I cancel my international trip?</a>
+</li>
+<li>
+<a href="#">What happens if there is a sick passenger on my
+flight?</a>
+</li>
+<li>
+<a href="#">What if I recently traveled and get sick?</a>
+</li>
+</ul>
+<a class="text_btn" href="#">View all <i class="linearicons-arrow-right"></i></a>
 </div>
 </div>
-<div class="col-lg-2 col-sm-4 col-6 wow fadeIn" data-wow-delay="600ms">
-<div class="washing_item">
-<div class="icon">
-<img src="assets/images/icon/washing-3.png" alt>
-<div class="number">
-3
+<div class="col-lg-4 col-sm-6">
+<div class="more_question_item">
+<h3>How it spreads</h3>
+<ul class="list-unstyled question_list">
+<li><a href="#">How does the virus spread?</a></li>
+<li>
+<a href="#">What is community spread?</a>
+</li>
+<li>
+<a href="#">What is the source of the virus?</a>
+</li>
+</ul>
+<a class="text_btn" href="#">View all <i class="linearicons-arrow-right"></i></a>
 </div>
 </div>
-<p>
-<span>Rub your hands</span> together and clean between your
-fingers
-</p>
+<div class="col-lg-4 col-sm-6">
+<div class="more_question_item">
+<h3>Keeping your home safe</h3>
+<ul class="list-unstyled question_list">
+<li>
+<a href="#">What steps can my family take to reduce our risk of
+getting COVID-19?</a>
+</li>
+<li>
+<a href="#">How can my family and I prepare for COVID-19?</a>
+</li>
+<li>
+<a href="#">Should I use soap and water or a hand sanitizer to
+protect against COVID-19?</a>
+</li>
+</ul>
+<a class="text_btn" href="#">View all <i class="linearicons-arrow-right"></i></a>
 </div>
 </div>
-<div class="col-lg-2 col-sm-4 col-6 wow fadeIn" data-wow-delay="700ms">
-<div class="washing_item">
-<div class="icon">
-<img src="assets/images/icon/washing-4.png" alt>
-<div class="number">
-4
+<div class="col-lg-4 col-sm-6">
+ <div class="more_question_item">
+<h3>Financial help for workers and families</h3>
+<ul class="list-unstyled question_list">
+<li>
+<a href="#">Who is eligible for the economic impact payment?</a>
+</li>
+<li>
+<a href="#">Is the government delaying Tax Day?</a>
+</li>
+<li>
+<a href="#">How can I file the tax return needed to receive my
+economic impact payment?</a>
+</li>
+</ul>
+<a class="text_btn" href="#">View all <i class="linearicons-arrow-right"></i></a>
 </div>
 </div>
-<p>
-<span>Rub the back</span> of your fingers against your palms
-</p>
-</div>
-</div>
-<div class="col-lg-2 col-sm-4 col-6 wow fadeIn" data-wow-delay="800ms">
-<div class="washing_item">
-<div class="icon">
-<img src="assets/images/icon/washing-5.png" alt>
-<div class="number">
-5
-</div>
-</div>
-<p>
-<span>Rub your thumb</span> using your other hand and vice
-versa
-</p>
-</div>
-</div>
-<div class="col-lg-2 col-sm-4 col-6 wow fadeIn" data-wow-delay="900ms">
-<div class="washing_item">
-<div class="icon">
- <img src="assets/images/icon/washing-6.png" alt>
-<div class="number">
-6
-</div>
-</div>
-<p>
-<span>Rub your tips</span> of your fingers on the palm of your
-other hand and vice versa
-</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-
-<section class="prevent_area">
-<div class="container">
-<div class="row prevent_inner">
-<div class="col-lg-6">
-<div class="prevent_item_inner row">
-<div class="col-sm-6 wow fadeInUp" data-wow-delay="400ms">
-<div class="prevent_item">
-<div class="prevent_img">
-<img class="img-fluid" src="assets/images/prevent/prevent-1.png" alt>
-</div>
-<div class="prevent_text">
-<h4>Stay at home</h4>
-<p>
-Stay at home if you perceive the symptoms and consult
-your doctor on phone.
-</p>
+<div class="col-lg-4 col-sm-6">
+<div class="more_question_item">
+<h3>Parents and children</h3>
+<ul class="list-unstyled question_list">
+<li>
+<a href="#">Are children more at-risk?</a>
+</li>
+<li>
+<a href="#">How should parents talk to children about COVID-19?</a>
+</li>
+<li>
+<a href="#">Are the symptoms of COVID-19 different in children than
+in adults?</a>
+</li>
+</ul>
+<a class="text_btn" href="#">View all <i class="linearicons-arrow-right"></i></a>
 </div>
 </div>
 </div>
-<div class="col-sm-6 wow fadeInUp" data-wow-delay="500ms">
-<div class="prevent_item">
-<div class="prevent_img">
-<img class="img-fluid" src="assets/images/prevent/prevent-2.png" alt>
-</div>
-<div class="prevent_text">
-<h4>Wash your hands often</h4>
-<p>
-Clean your hands with alcohol-based rub or wash them
-with soap for at least 20 seconds.
-</p>
-</div>
-</div>
-</div>
-<div class="col-sm-6 wow fadeInUp" data-wow-delay="600ms">
-<div class="prevent_item">
-<div class="prevent_img">
-<img class="img-fluid" src="assets/images/prevent/prevent-3.png" alt>
-</div>
-<div class="prevent_text">
-<h4>Keep social distance</h4>
-<p>
-Keep at least 2 m distance between yourself & anyone if
-you go among people.
-</p>
-</div>
-</div>
-</div>
-<div class="col-sm-6 wow fadeInUp" data-wow-delay="700ms">
-<div class="prevent_item">
-<div class="prevent_img">
-<img class="img-fluid" src="assets/images/prevent/prevent-4.png" alt>
-</div>
-<div class="prevent_text">
-<h4>Wear Facemask</h4>
-<p>
-When you are around other people and before you enter a
-healthcare provider’s.
-</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="prevent_details">
-<div class="prevent_details_text">
-<h5>What should you do</h5>
-<h2>How to prevent Coronavirus?</h2>
-<p>
-Some details about how the disease is spread are unknown and
-is being determined.The WHO and CDC state that it is
-primarily spread during close contact and by respiratory
-droplets produced when people cough or sneeze; with close
-contact being within 1 to 2 meters (3 to 6 feet). A study in
-Singapore found that an uncovered coughing can lead to
-droplets travelling up to 4.5 metres (15 feet).
-</p>
-<p>
-Respiratory droplets may also be produced during breathing
- out, including when talking, though the virus is not
-generally airborne. These droplets can land in the mouths or
-noses of people who are nearby or possibly be inhaled into
-the lungs. Some medical procedures such as intubation and
-cardiopulmonary...
-</p>
-<a class="green_btn" href="#"><i class="linearicons-shield-check"></i> Read more about
-Prevention</a>
-</div>
-</div>
-</div>
-</div>
+<div class="border_bottom"></div>
 </div>
 </section>
 
 
-<section class="answers_area p_100">
+<section class="faq_area">
 <div class="container">
 <div class="main_title">
 <h5>Have questions? Find answers!</h5>
@@ -885,18 +527,15 @@ Pandemic
 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">What is the COVID-19 virus?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">What is the difference between COVID-19
-and
+<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">What is the difference between COVID-19 and
 the
 flu?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="four-tab" data-toggle="tab" href="#four" role="tab" aria-controls="four" aria-selected="false">How is the
-virus spread?</a>
+<a class="nav-link" id="four-tab" data-toggle="tab" href="#four" role="tab" aria-controls="four" aria-selected="false">How is the virus spread?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="five-tab" data-toggle="tab" href="#five" role="tab" aria-controls="five" aria-selected="false">What are
-the symptoms?</a>
+<a class="nav-link" id="five-tab" data-toggle="tab" href="#five" role="tab" aria-controls="five" aria-selected="false">What are the symptoms?</a>
 </li>
 </ul>
 </div>
@@ -911,27 +550,23 @@ About COVID-19
 </div>
 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 <div class="card-body">
- <ul class="nav nav-tabs" id="myTab2" role="tablist">
+<ul class="nav nav-tabs" id="myTab2" role="tablist">
 <li class="nav-item">
-<a class="nav-link" id="home2-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home2" aria-selected="true">What are
-coronaviruses?</a>
+<a class="nav-link" id="home2-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home2" aria-selected="true">What are coronaviruses?</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" id="profile2-tab" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile2" aria-selected="false">What is the COVID-19 virus?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="contact2-tab" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">What is the difference between COVID-19
-and
+<a class="nav-link" id="contact2-tab" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">What is the difference between COVID-19 and
 the
 flu?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="four2-tab" data-toggle="tab" href="#four2" role="tab" aria-controls="four2" aria-selected="false">How is
-the virus spread?</a>
+<a class="nav-link" id="four2-tab" data-toggle="tab" href="#four2" role="tab" aria-controls="four2" aria-selected="false">How is the virus spread?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="five2-tab" data-toggle="tab" href="#five2" role="tab" aria-controls="five2" aria-selected="false">What are
-the symptoms?</a>
+<a class="nav-link" id="five2-tab" data-toggle="tab" href="#five2" role="tab" aria-controls="five2" aria-selected="false">What are the symptoms?</a>
 </li>
 </ul>
 </div>
@@ -948,26 +583,22 @@ Protecting against COVID-19
 <div class="card-body">
 <ul class="nav nav-tabs" id="myTab3" role="tablist">
 <li class="nav-item">
-<a class="nav-link" id="home3-tab" data-toggle="tab" href="#home3" role="tab" aria-controls="home3" aria-selected="true">What are
-coronaviruses?</a>
+<a class="nav-link" id="home3-tab" data-toggle="tab" href="#home3" role="tab" aria-controls="home3" aria-selected="true">What are coronaviruses?</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" id="profile3-tab" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile3" aria-selected="false">What is the COVID-19 virus?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="contact3-tab" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact3" aria-selected="false">What is the difference between COVID-19
-and
+<a class="nav-link" id="contact3-tab" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact3" aria-selected="false">What is the difference between COVID-19 and
 the
 flu?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="four3-tab" data-toggle="tab" href="#four3" role="tab" aria-controls="four3" aria-selected="false">How is
-the virus spread?</a>
+<a class="nav-link" id="four3-tab" data-toggle="tab" href="#four3" role="tab" aria-controls="four3" aria-selected="false">How is the virus spread?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="five3-tab" data-toggle="tab" href="#five3" role="tab" aria-controls="five3" aria-selected="false">What are
-the symptoms?</a>
- </li>
+<a class="nav-link" id="five3-tab" data-toggle="tab" href="#five3" role="tab" aria-controls="five3" aria-selected="false">What are the symptoms?</a>
+</li>
 </ul>
 </div>
 </div>
@@ -983,25 +614,21 @@ Work and travel arrangements
 <div class="card-body">
 <ul class="nav nav-tabs" id="myTab4" role="tablist">
 <li class="nav-item">
-<a class="nav-link" id="home4-tab" data-toggle="tab" href="#home4" role="tab" aria-controls="home4" aria-selected="true">What are
-coronaviruses?</a>
+<a class="nav-link" id="home4-tab" data-toggle="tab" href="#home4" role="tab" aria-controls="home4" aria-selected="true">What are coronaviruses?</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" id="profile4-tab" data-toggle="tab" href="#profile4" role="tab" aria-controls="profile4" aria-selected="false">What is the COVID-19 virus?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="contact4-tab" data-toggle="tab" href="#contact4" role="tab" aria-controls="contact4" aria-selected="false">What is the difference between COVID-19
-and
+<a class="nav-link" id="contact4-tab" data-toggle="tab" href="#contact4" role="tab" aria-controls="contact4" aria-selected="false">What is the difference between COVID-19 and
 the
 flu?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="four4-tab" data-toggle="tab" href="#four4" role="tab" aria-controls="four4" aria-selected="false">How is
-the virus spread?</a>
+<a class="nav-link" id="four4-tab" data-toggle="tab" href="#four4" role="tab" aria-controls="four4" aria-selected="false">How is the virus spread?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="five4-tab" data-toggle="tab" href="#five4" role="tab" aria-controls="five4" aria-selected="false">What are
-the symptoms?</a>
+<a class="nav-link" id="five4-tab" data-toggle="tab" href="#five4" role="tab" aria-controls="five4" aria-selected="false">What are the symptoms?</a>
 </li>
 </ul>
 </div>
@@ -1018,25 +645,21 @@ About university and school
 <div class="card-body">
 <ul class="nav nav-tabs" id="myTab5" role="tablist">
 <li class="nav-item">
-<a class="nav-link" id="home5-tab" data-toggle="tab" href="#home5" role="tab" aria-controls="home5" aria-selected="true">What are
-coronaviruses?</a>
+<a class="nav-link" id="home5-tab" data-toggle="tab" href="#home5" role="tab" aria-controls="home5" aria-selected="true">What are coronaviruses?</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" id="profile5-tab" data-toggle="tab" href="#profile5" role="tab" aria-controls="profile5" aria-selected="false">What is the COVID-19 virus?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="contact5-tab" data-toggle="tab" href="#contact5" role="tab" aria-controls="contact5" aria-selected="false">What is the difference between COVID-19
-and
+<a class="nav-link" id="contact5-tab" data-toggle="tab" href="#contact5" role="tab" aria-controls="contact5" aria-selected="false">What is the difference between COVID-19 and
 the
 flu?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="four5-tab" data-toggle="tab" href="#four5" role="tab" aria-controls="four5" aria-selected="false">How is
-the virus spread?</a>
+<a class="nav-link" id="four5-tab" data-toggle="tab" href="#four5" role="tab" aria-controls="four5" aria-selected="false">How is the virus spread?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="five5-tab" data-toggle="tab" href="#five5" role="tab" aria-controls="five5" aria-selected="false">What are
-the symptoms?</a>
+<a class="nav-link" id="five5-tab" data-toggle="tab" href="#five5" role="tab" aria-controls="five5" aria-selected="false">What are the symptoms?</a>
 </li>
 </ul>
 </div>
@@ -1053,25 +676,21 @@ Home isolation
 <div class="card-body">
 <ul class="nav nav-tabs" id="myTab6" role="tablist">
 <li class="nav-item">
-<a class="nav-link" id="home6-tab" data-toggle="tab" href="#home6" role="tab" aria-controls="home6" aria-selected="true">What are
-coronaviruses?</a>
+<a class="nav-link" id="home6-tab" data-toggle="tab" href="#home6" role="tab" aria-controls="home6" aria-selected="true">What are coronaviruses?</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" id="profile6-tab" data-toggle="tab" href="#profile6" role="tab" aria-controls="profile6" aria-selected="false">What is the COVID-19 virus?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="contact6-tab" data-toggle="tab" href="#contact6" role="tab" aria-controls="contact6" aria-selected="false">What is the difference between COVID-19
-and
+<a class="nav-link" id="contact6-tab" data-toggle="tab" href="#contact6" role="tab" aria-controls="contact6" aria-selected="false">What is the difference between COVID-19 and
 the
 flu?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="four6-tab" data-toggle="tab" href="#four6" role="tab" aria-controls="four6" aria-selected="false">How is
-the virus spread?</a>
+<a class="nav-link" id="four6-tab" data-toggle="tab" href="#four6" role="tab" aria-controls="four6" aria-selected="false">How is the virus spread?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="five6-tab" data-toggle="tab" href="#five6" role="tab" aria-controls="five6" aria-selected="false">What are
-the symptoms?</a>
+<a class="nav-link" id="five6-tab" data-toggle="tab" href="#five6" role="tab" aria-controls="five6" aria-selected="false">What are the symptoms?</a>
 </li>
 </ul>
 </div>
@@ -1088,25 +707,21 @@ Social distancing
 <div class="card-body">
 <ul class="nav nav-tabs" id="myTab7" role="tablist">
 <li class="nav-item">
-<a class="nav-link" id="home7-tab" data-toggle="tab" href="#home7" role="tab" aria-controls="home7" aria-selected="true">What are
-coronaviruses?</a>
+<a class="nav-link" id="home7-tab" data-toggle="tab" href="#home7" role="tab" aria-controls="home7" aria-selected="true">What are coronaviruses?</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" id="profile7-tab" data-toggle="tab" href="#profile7" role="tab" aria-controls="profile7" aria-selected="false">What is the COVID-19 virus?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="contact7-tab" data-toggle="tab" href="#contact7" role="tab" aria-controls="contact7" aria-selected="false">What is the difference between COVID-19
-and
+<a class="nav-link" id="contact7-tab" data-toggle="tab" href="#contact7" role="tab" aria-controls="contact7" aria-selected="false">What is the difference between COVID-19 and
 the
 flu?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="four7-tab" data-toggle="tab" href="#four7" role="tab" aria-controls="four7" aria-selected="false">How is
-the virus spread?</a>
+<a class="nav-link" id="four7-tab" data-toggle="tab" href="#four7" role="tab" aria-controls="four7" aria-selected="false">How is the virus spread?</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="five7-tab" data-toggle="tab" href="#five7" role="tab" aria-controls="five7" aria-selected="false">What are
-the symptoms?</a>
+<a class="nav-link" id="five7-tab" data-toggle="tab" href="#five7" role="tab" aria-controls="five7" aria-selected="false">What are the symptoms?</a>
 </li>
 </ul>
 </div>
@@ -1226,7 +841,7 @@ influenza infections.
 <h4>How is the virus spread?</h4>
 <p>
 The first symptoms of COVID-19 and influenza (flu)
- infections are often very similar. They both cause fever and
+infections are often very similar. They both cause fever and
 similar respiratory symptoms, which can then range from mild
 through to severe disease, and sometimes can be fatal.
 </p>
@@ -1575,11 +1190,11 @@ require intensive care in a hospital ICU. The proportions of
 severe and critical COVID-19 infections are higher than for
 influenza infections.
 </p>
-</div>
+ </div>
 <div class="tab-pane fade" id="four3" role="tabpanel" aria-labelledby="four3-tab">
 <h4>How is the virus spread? 4</h4>
 <p>
- The first symptoms of COVID-19 and influenza (flu)
+The first symptoms of COVID-19 and influenza (flu)
 infections are often very similar. They both cause fever and
 similar respiratory symptoms, which can then range from mild
 through to severe disease, and sometimes can be fatal.
@@ -1716,10 +1331,10 @@ severe and critical COVID-19 infections are higher than for
 influenza infections.
 </p>
 </div>
-<div class="tab-pane fade" id="contact4" role="tabpanel" aria-labelledby="contact4-tab">
+ <div class="tab-pane fade" id="contact4" role="tabpanel" aria-labelledby="contact4-tab">
 <h4>
 What is the difference between COVID-19 and the flu? 3
- </h4>
+</h4>
 <p>
 The first symptoms of COVID-19 and influenza (flu)
 infections are often very similar. They both cause fever and
@@ -1790,7 +1405,7 @@ influenza infections.
 </div>
 <div class="tab-pane fade" id="five4" role="tabpanel" aria-labelledby="five4-tab">
 <h4>What are the symptoms? 5</h4>
- <p>
+<p>
 The first symptoms of COVID-19 and influenza (flu)
 infections are often very similar. They both cause fever and
 similar respiratory symptoms, which can then range from mild
@@ -1856,11 +1471,11 @@ approximately 15% of people have severe infections and 5%
 require intensive care in a hospital ICU. The proportions of
 severe and critical COVID-19 infections are higher than for
 influenza infections.
-</p>
+ </p>
 </div>
 <div class="tab-pane fade" id="profile5" role="tabpanel" aria-labelledby="profile5-tab">
 <h4>What is the COVID-19 virus? 2</h4>
- <p>
+<p>
 The first symptoms of COVID-19 and influenza (flu)
 infections are often very similar. They both cause fever and
 similar respiratory symptoms, which can then range from mild
@@ -1931,7 +1546,7 @@ influenza infections.
 </p>
 </div>
 <div class="tab-pane fade" id="four5" role="tabpanel" aria-labelledby="four5-tab">
- <h4>How is the virus spread? 4</h4>
+<h4>How is the virus spread? 4</h4>
 <p>
 The first symptoms of COVID-19 and influenza (flu)
 infections are often very similar. They both cause fever and
@@ -1997,7 +1612,7 @@ COVID-19. While most people have mild symptoms,
 approximately 15% of people have severe infections and 5%
 require intensive care in a hospital ICU. The proportions of
 severe and critical COVID-19 infections are higher than for
-influenza infections.
+ influenza infections.
 </p>
 </div>
 <div class="tab-pane fade" id="home6" role="tabpanel" aria-labelledby="home6-tab">
@@ -2067,12 +1682,12 @@ COVID-19. While most people have mild symptoms,
 approximately 15% of people have severe infections and 5%
 require intensive care in a hospital ICU. The proportions of
 severe and critical COVID-19 infections are higher than for
-influenza infections.
+ influenza infections.
 </p>
 </div>
 <div class="tab-pane fade" id="contact6" role="tabpanel" aria-labelledby="contact6-tab">
 <h4>
- What is the difference between COVID-19 and the flu? 3
+What is the difference between COVID-19 and the flu? 3
 </h4>
 <p>
 The first symptoms of COVID-19 and influenza (flu)
@@ -2350,14 +1965,14 @@ the fraction with severe disease appears to be higher for
 COVID-19. While most people have mild symptoms,
 approximately 15% of people have severe infections and 5%
 require intensive care in a hospital ICU. The proportions of
-severe and critical COVID-19 infections are higher than for
+ severe and critical COVID-19 infections are higher than for
 influenza infections.
 </p>
 </div>
 </div>
 </div>
 </div>
- </div>
+</div>
 </section>
 
 
@@ -2487,15 +2102,15 @@ treating coronavirus and COVID-19.
 Download our app now, track Coronavirus cases real-time and
 follow instant updates.
 </p>
-<a class="wow fadeIn" data-wow-delay="400" href="#"><img src="assets/images/apple-btn.png" alt></a>
-<a class="wow fadeIn" data-wow-delay="500" href="#"><img src="assets/images/google-btn.png" alt></a>
+<a href="#"><img src="assets/images/apple-btn.png" alt></a>
+<a href="#"><img src="assets/images/google-btn.png" alt></a>
 </div>
 </div>
 <div class="col-lg-6">
 <div class="app_mobile">
 <div class="mobile_image">
 <img src="assets/images/mobile-1.png" alt>
-<img class="wow fadeInUp" data-wow-delay="500ms" src="assets/images/mobile-2.png" alt>
+<img src="assets/images/mobile-2.png" alt>
 </div>
 <ul class="corona_img nav">
 <li>
@@ -2507,7 +2122,7 @@ follow instant updates.
 <li>
 <img src="assets/images/icon/app-virus-3.png" alt>
 </li>
-<li data-parallax="{"y": -100}">
+<li>
 <img src="assets/images/icon/app-virus-4.png" alt>
 </li>
 <li data-parallax="{"y": 100}">
@@ -2516,53 +2131,10 @@ follow instant updates.
 <li>
 <img src="assets/images/icon/app-virus-6.png" alt>
 </li>
-<li data-parallax="{"y": -200}">
+<li>
 <img src="assets/images/icon/app-virus-7.png" alt>
 </li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-
-<section class="subscribe_area apps_craft_animation">
-<ul class="nav">
-<li><img class="layer layer2" data-depth="0.5" src="assets/images/icon/subs-1.png" alt></li>
-<li><img src="assets/images/icon/subs-2.png" alt></li>
-<li><img src="assets/images/icon/subs-3.png" alt></li>
-</ul>
-<div class="container">
-<div class="row">
-<div class="col-lg-6">
-<div class="media">
-<div class="d-flex">
-<i class="linearicons-mailbox-full"></i>
-</div>
-<div class="media-body">
-<h4>Subscribe our newsletter</h4>
-<p>
-Join our subscribers list to get latest news and updates
-about COVID-19 delivered directly in your inbox.
-</p>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="mail_box">
-<div class="input-group">
- <input type="text" class="form-control" placeholder="&#xe997; Enter your email" aria-label="Recipient's username" aria-describedby="button-addon2">
-<div class="input-group-append">
-<button class="btn btn-outline-secondary" type="button" id="button-addon2">
-<i class="linearicons-arrow-right"></i>
-</button>
-</div>
-</div>
-<label class="container-checkbox">I accept the <span>Privacy Policy.</span>
-<input type="checkbox">
-<span class="checkmark"></span>
-</label>
 </div>
 </div>
 </div>
@@ -2595,7 +2167,7 @@ about COVID-19 delivered directly in your inbox.
 <div class="d-flex">
 <i class="linearicons-map-marker"></i>
 </div>
-<div class="media-body">
+ <div class="media-body">
 <p>
 78-66 State Route 33,<br>
 Brighton VIC 3186, AUSTRALIA
@@ -2617,8 +2189,8 @@ Brighton VIC 3186, AUSTRALIA
 <i class="linearicons-envelope-open"></i>
 </div>
 <div class="media-body">
-<a href="/cdn-cgi/l/email-protection#23514c40485a4147121a1a1663444e424a4f0d404c4e">
-<h6>Email: <span><span class="__cf_email__" data-cfemail="92fafbd2f7e2fbf6f7fffbf1bcfde0f5">[email&#160;protected]</span></span></h6>
+<a href="/cdn-cgi/l/email-protection#e1938e828a988385d0d8d8d4a1868c80888dcf828e8c">
+<h6>Email: <span><span class="__cf_email__" data-cfemail="147c7d5471647d7071797d773a7b6673">[email&#160;protected]</span></span></h6>
 </a>
 </div>
 </div>
@@ -2653,7 +2225,7 @@ Coronavirus</a>
 </li>
 </ul>
 </aside>
- </div>
+</div>
 <div class="col-lg-3 col-md-6 col-sm-6 col-6">
 <aside class="f_widget list_widget">
 <div class="f_title">
@@ -2683,7 +2255,7 @@ Coronavirus</a>
 </ul>
 </aside>
 </div>
-<div class="col-lg-3 col-md-6 col-sm-6">
+<div class="col-lg-3 col-md-6 col-sm-6 col-6">
 <aside class="f_widget about_widget">
 <div class="f_title">
 <h3>About</h3>
@@ -2699,7 +2271,7 @@ resulting in the 2019–2020 coronavirus pandemic.
 </li>
 <li>
 <a href="#"><i class="fab fa-twitter"></i></a>
-</li>
+ </li>
 <li>
 <a href="#"><i class="fab fa-instagram"></i></a>
 </li>
@@ -2744,9 +2316,10 @@ by <span>creakits</span>
 <div class="modal-content">
 <div class="modal-body">
 <div class="input-group">
-<input type="text" class="form-control" placeholder="Type here..." aria-label="Recipient's username" aria-describedby="button-addon3">
+<input type="text" class="form-control" placeholder="Type here..." aria-label="Recipient's username">
 <div class="input-group-append">
-<button class="btn btn-outline-secondary" type="button" id="button-addon3"><i class="linearicons-magnifier"></i></button>
+<button class="btn btn-outline-secondary" type="button"><i class="linearicons-magnifier"></i>
+</button>
 </div>
 </div>
 </div>
@@ -2765,7 +2338,6 @@ by <span>creakits</span>
 <script src="assets/vendors/scroll-animation/jquery.parallax-scroll.js"></script>
 <script src="assets/vendors/scroll-animation/parallax.js"></script>
 <script src="assets/vendors/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="assets/vendors/animate-css/wow.min.js"></script>
 <script src="assets/js/jquery.validate.min.js"></script>
 <script src="assets/js/theme.js"></script>
 </body>
