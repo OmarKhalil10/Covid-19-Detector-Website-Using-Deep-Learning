@@ -19,6 +19,10 @@ def create_app(test_config=None):
     @app.route("/")
     def landing_page():
         return render_template("pages/index.html")
+    
+    @app.route("/")
+    def landing_page():
+        return render_template("pages/index.html")
     @app.errorhandler(400)
     def bad_request(error):
         return jsonify({
