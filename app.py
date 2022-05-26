@@ -1,11 +1,29 @@
-from flask import Flask, request, render_template, redirect, abort, jsonify
+import os
+from flask import Flask, request, render_template, redirect, abort, jsonify, flash, url_for
 from flask_cors import CORS
 from sqlalchemy import or_
+import numpy as np
+import tensorflow as tf
+from werkzeug.utils import secure_filename
+from flask import send_from_directory
+from keras.preprocessing import image
+import matplotlib.pyplot as plt
+
+UPLOAD_FOLDER = '.\\static\\uploads'
+SECRET_KEY="\x15\xd5\xafG?\x1cc?\xbe\x9b\xa9\x84<z\x92E+\xcbGW\x18\xddv\xb2"
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 def create_app(test_config=None):
     # Create and configure the app
     app = Flask(__name__)
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+    app.config['SECRET_KEY'] = SECRET_KEY
     #setup_db(app)
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 
@@ -56,7 +74,48 @@ def create_app(test_config=None):
     def tracker_page():
         return render_template("pages/tracker.html")
 
-    
+    @app.route("/prediction", methods=["POST", "GET"])
+    def prediction_page():
+        # check if the post request has the file part
+        if request.method == 'POST':
+            if 'files' not in request.files:
+                flash('No file part')
+            file = request.files['files']
+            # if user does not select file, browser also
+            # submit an empty part without filename
+            if file.filename == '':
+                flash('No selected file')
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
+            model =  tf.keras.models.load_model('.\\covid_classifier_model.h5')
+            
+            path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            img = image.load_img(path, target_size=(200, 200))
+            x=image.img_to_array(img)
+            x /= 255
+            x=np.expand_dims(x, axis=0)
+            images = np.vstack([x])
+            
+            classes = model.predict(images, batch_size=10)
+            
+            if classes[0]>0.5:
+                prediction = "Positive"
+            else:
+                prediction = "Negative"
+            return jsonify({
+                'data': prediction,
+                'success': True
+                }), 200
+        return jsonify({
+                'success': False
+                }), 405
+
+    @app.route('/uploads/<filename>')
+    def uploaded_file(filename):
+        return send_from_directory(app.config['UPLOAD_FOLDER'],
+                                filename)
 
     @app.errorhandler(400)
     def bad_request(error):
