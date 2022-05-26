@@ -20,9 +20,44 @@ def create_app(test_config=None):
     def landing_page():
         return render_template("pages/index.html")
     
-    @app.route("/")
-    def landing_page():
-        return render_template("pages/index.html")
+    @app.route("/about")
+    def about_page():
+        return render_template("pages/about.html")
+    
+    @app.route("/contact")
+    def contact_page():
+        return render_template("pages/contact.html")
+
+    @app.route("/faq")
+    def faq_page():
+        return render_template("pages/faq.html")
+    
+    @app.route("/prevention")
+    def prevention_page():
+        return render_template("pages/prevention.html")
+
+    @app.route("/search")
+    def search_page():
+        return render_template("pages/search.html")
+
+    @app.route("/symptom")
+    def symptom_page():
+        return render_template("pages/symptom.html")
+   
+    @app.route("/symptom-checker")
+    def symptom_checker_page():
+        return render_template("pages/symptom-checker.html")
+
+    @app.route("/virus-checker")
+    def virus_checker_page():
+        return render_template("pages/virus-checker.html")
+
+    @app.route("/tracker")
+    def tracker_page():
+        return render_template("pages/tracker.html")
+
+    
+
     @app.errorhandler(400)
     def bad_request(error):
         return jsonify({
