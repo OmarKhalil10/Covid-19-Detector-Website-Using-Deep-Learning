@@ -1,121 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="/static/images/favicon.png" type="image/png">
-    <title>COVID - 19</title>
-
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/vendors/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="/static/vendors/linearicons/css/linearicons.css">
-    <link rel="stylesheet" href="/static/vendors/slick/slick.css">
-    <link rel="stylesheet" href="/static/vendors/slick/slick-theme.css">
-    <link rel="stylesheet" href="/static/vendors/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
-
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/responsive.css">
-</head>
-
-<body>
-    <div class="body_wrapper">
-
-        <div class="preloader">
-            <div class="three-bounce">
-                <div class="one"></div>
-                <div class="two"></div>
-                <div class="three"></div>
-            </div>
-        </div>
-
-
-        <div class="canvus_menu_area">
-            <div class="container">
-                <div class="logo_part d-flex justify-content-end">
-                    <div class="right">
-                        <div class="close_btn">
-                            <img src="/static/images/icon/close-white.png" alt>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu_part_lux">
-                <ul class="menu_list wd_scroll">
-                    <li><a href>Home</a></li>
-                    <li class="active">
-                        <a href>Prevention
-                            <i class="linearicons-chevron-down"></i>
-                        </a>
-                        <ul class="list">
-                            <li><a href="symptom.html">Typical Symptoms</a></li>
-                            <li><a href="symptom-checker.html">Symptom Checker</a></li>
-                            <li><a href="prevention.html">Prevention</a></li>
-                            <li><a href="virus-checker.html">Coronavirus Checker</a></li>
-                            <li><a href="tracker.html">Tracker</a></li>
-                            <li><a href="maintenance.html">Maintenance</a></li>
-                            <li><a href="faq.html">Faqs</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="appointment.html">Appointment</a></li>
-                    <li class="active">
-                        <a href="#">Pages
-                            <i class="linearicons-chevron-down"></i>
-                        </a>
-                        <ul class="list">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="doctors.html">Doctors</a></li>
-                            <li><a href="sample-right-sidebar.html">Simple Sidebar</a></li>
-                            <li><a href="typography.html">Typhography</a></li>
-                            <li><a href="search.html">Search</a></li>
-                            <li><a href="search-nothing.html">Not Found</a></li>
-                            <li><a href="comingsoon.html">Coming Soon</a></li>
-                            <li><a href="404.html">Error</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href>Blog
-                            <i class="linearicons-chevron-down"></i>
-                        </a>
-                        <ul class="list">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="single-blog.html">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-
-
-        <header class="header_area menu_tow">
-            <div class="main_menu">
-                <div class="container">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href><img src="/static/images/logo-2.png"
-                                srcset="/static/images/logo-2-2x.png 2x" alt></a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mr-auto">
-                                <li><a href><i class="linearicons-arrow-left"></i> Back to Homepage</a>
-                                </li>
-                            </ul>
-                            <ul class="navbar-nav justify-content-end">
-                                <li class="menu_btn">
-                                    <img src="/static/images/icon/burger-white.png" alt>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </header>
-
+{% extends 'layouts/virius-checker.html' %} {% block title %}Virius Checker - CovDec{% endblock %}
+{% block content %}
         <div class="pagepiling">
             <div class="pp-scrollable section active">
                 <div class="scroll-wrap">
@@ -381,8 +265,9 @@
             </div>
         </div>
     </div>
+    {% endblock %}
 
-
+    {% block script %}
     <script src="/static/js/jquery-3.4.1.min.js"></script>
     <script src="/static/js/popper.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
@@ -392,6 +277,4 @@
     <script src="/static/vendors/slick/slick.min.js"></script>
     <script src="/static/vendors/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="/static/js/theme.js"></script>
-</body>
-
-</html>
+    {% endblock %}
