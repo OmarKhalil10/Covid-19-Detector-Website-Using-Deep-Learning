@@ -101,8 +101,7 @@
                     </div>
                     -->
             <div class="col-lg-6">
-                <div class="checker_form">
-                    <form enctype="multipart/form-data">
+                <div class="checker_form" id="checker_form">
                         <input id="fileUpload" type="file" name="file">
                     </form>
                 </div>
@@ -330,6 +329,30 @@
 
 {% endblock %}
 {% block script %}
+<script>
+    document.querySelector('#fileUpload').addEventListener('change', event => {
+        let files = event.target.files
+        let fileName = files[0].name
+        // your code start here
+        var data = new FormData()
+        data.append('files', files[0]) // maybe it should be '{target}_cand'
+        data.append('name', fileName)
+
+        let url = "/prediction"
+        fetch(url,{
+            method:'POST',
+            body: data,
+        })
+        .then(function(response){
+        return response.json()
+        })
+        // .then(function(data){ // use different name to avoid confusion
+        .then(function(res){
+            htmlContent = "<h3 style='color: #fff;font: 700 21px quicksand, sans-serif;'>You are "+res.data+" </h3>"
+            document.getElementById("checker_form").insertAdjacentHTML("afterbegin", htmlContent)
+        })
+    })
+</script>
 <script src="/static/js/jquery-3.4.1.min.js"></script>
 <script src="/static/js/popper.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
