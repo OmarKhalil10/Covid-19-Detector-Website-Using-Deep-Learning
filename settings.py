@@ -2,6 +2,7 @@ import os
 
 UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER')
 SECRET_KEY=os.environ.get('SECRET_KEY')
+EMAIL_FILE_PATH=os.environ.get('EMAIL_FILE_PATH')
 DEBUG = True
 MAIL_SERVER = 'smtp.gmail.com'
 MAIL_PORT = 587

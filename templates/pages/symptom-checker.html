@@ -101,13 +101,13 @@
                     </div>
                 -->
                 <div class="col-lg-6">
-                    <div class="checker_form" id="checker_form">
+                    <div class="checker-form" id="checker-form">
                         <div class="drag-area">
                             <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
                             <header class="drag-drop">Drag & Drop to Upload File</header>
                             <span>OR</span>
                             <button class="upload-btn">Browse File</button>
-                            <input class="upload-file" type="file" hidden>
+                            <input id="fileUpload" class="upload-file" type="file" hidden>
                           </div>
                     </div>
                 </div>
@@ -367,7 +367,7 @@
         // .then(function(data){ // use different name to avoid confusion
         .then(function(res){
             htmlContent = "<h3 style='color: #fff;font: 700 20px quicksand, sans-serif;'>You are Covid "+res.prediction+" with certainty percentage "+ res.percentage +" %" +"</h3>"
-            document.getElementById("checker_form").insertAdjacentHTML("afterbegin", htmlContent)
+            document.getElementById("checker-form").insertAdjacentHTML("beforeend", htmlContent)
         })
     })
 </script>

@@ -74,7 +74,7 @@ def create_app(test_config=None):
         if request.method == 'POST':
             body = request.get_json()
             email = body.get('email', None)
-            filePath = ".\\static\\news-letter\\emails.txt"
+            filePath = app.config['EMAIL_FILE_PATH']
             with open(filePath, "a") as f:
                 f.write(email+','+'\n')
             return jsonify({
