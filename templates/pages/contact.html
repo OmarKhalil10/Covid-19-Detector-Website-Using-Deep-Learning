@@ -97,9 +97,9 @@
                 </div>
                 <div id="success" class="success-message">
                     <i class="fa fa-check text-primary"></i> Thank you!. Your message
-                    is successfully sent...
+                    is successfully sent.
                 </div>
-                <div id="fail" class="error-message">We're sorry, but something went wrong</div>
+                <div id="fail" class="error-message">We're sorry, but something went wrong.</div>
             </form>
         </div>
     </div>
@@ -176,17 +176,13 @@
             return response.json();
         }).then(function(jsonResponse){
             if(jsonResponse['success'] == true){
-            const fail = document.getElementById('fail');
             const success = document.getElementById('success');
             success.style.display = "block";
-            fail.style.display = "none";
-            document.contact.reset();
+            form.reset();
             }
         }).catch(function(){
             const fail = document.getElementById('fail');
-            const success = document.getElementById('success');            
             fail.style.display = "block";
-            success.style.display = "none";
         });
     }
 </script>

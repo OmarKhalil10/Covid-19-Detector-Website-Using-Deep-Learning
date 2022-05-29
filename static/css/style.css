@@ -4042,13 +4042,16 @@ button:focus {
     min-height: 800px
 }
 
-.success-message,
+.success-message {
+    display: none;
+    margin-top: 5px;
+    padding-left: 15px
+}
 .error-message {
     display: none;
     margin-top: 5px;
     padding-left: 15px
 }
-
 .about_cronacvirus_promo_area {
     padding: 120px 0 20px;
     position: relative;
