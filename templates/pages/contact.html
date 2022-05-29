@@ -176,19 +176,13 @@
             return response.json();
         }).then(function(jsonResponse){
             if(jsonResponse['success']){
-            const alertMessage = document.getElementById('success');
-            alertMessage.style.display = "block";
-            setTimeout(function(){
-                alertMessage.remove();
-            }, 2000)
+            const alertMessage = document.getElementsByClassName('success-message');
+            alertMessage.show();
             document.contact.reset();
             }
         }).catch(function(){
-            const alertMessage = document.getElementById('fail');
-            alertMessage.style.display = "block";
-            setTimeout(function(){
-                alertMessage.remove();
-            }, 2000)
+            const alertMessage = document.getElementsByClassName('error-message');
+            alertMessage.show();
         });
     }
 </script>
