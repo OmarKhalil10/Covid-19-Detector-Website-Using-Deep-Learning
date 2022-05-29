@@ -176,17 +176,13 @@
             return response.json();
         }).then(function(jsonResponse){
             if(jsonResponse['success'] == true){
-            const fail = document.getElementById('fail');
             const success = document.getElementById('success');
             success.style.display = "block";
-            fail.style.display = "none";
-            document.contact.reset();
+            form.reset();
             }
-        }).catch(function(){
-            const fail = document.getElementById('fail');
-            const success = document.getElementById('success');            
+        }).catch(function(error){
+            const fail = document.getElementById('fail');         
             fail.style.display = "block";
-            success.style.display = "none";
         });
     }
 </script>
