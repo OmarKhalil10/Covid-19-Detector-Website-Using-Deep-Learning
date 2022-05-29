@@ -69,6 +69,39 @@ def create_app(test_config=None):
                 })
         return render_template("pages/contact.html")
 
+    @app.route("/newsletter-subscribe", methods=["POST"])
+    def subscribe_to_newsletter():
+        if request.method == 'POST':
+            body = request.get_json()
+            email = body.get('email', None)
+            filePath = ".\\static\\news-letter\\emails.txt"
+            with open(filePath, "a") as f:
+                f.write(email+','+'\n')
+            return jsonify({
+                'success': True 
+                })
+            """
+            subject = 'New Message From '+ email +' Via Your Webstie'
+            body = "Hello,\n"\
+            "This is "+name+ " from your website.\n\n"\
+            "My Email: " +email+'.\n'\
+            "My Message: "+ message
+            try:
+                msg = Message(subject, sender='johnaziz269@gmail.com', recipients=['johnaziz269@gmail.com'])
+                msg.body = body
+                mail.send(msg)
+                return jsonify({
+                'success': True 
+                })
+            except:
+                return jsonify({
+                    'success': False 
+                })
+            """
+        return jsonify({
+                    'success': False 
+                }), 405
+
     @app.route("/faq")
     def faq_page():
         return render_template("pages/faq.html")
