@@ -133,3 +133,5 @@ dmypy.json
 /.vs/
 
 /static/uploads/
+
+vars.env

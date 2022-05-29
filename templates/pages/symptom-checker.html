@@ -352,7 +352,7 @@
         })
         // .then(function(data){ // use different name to avoid confusion
         .then(function(res){
-            htmlContent = "<h3 style='color: #fff;font: 700 21px quicksand, sans-serif;'>You are "+res.data+" </h3>"
+            htmlContent = "<h3 style='color: #fff;font: 700 20px quicksand, sans-serif;'>You are Covid "+res.prediction+" with certainty percentage "+ res.percentage +" %" +"</h3>"
             document.getElementById("checker_form").insertAdjacentHTML("afterbegin", htmlContent)
         })
     })

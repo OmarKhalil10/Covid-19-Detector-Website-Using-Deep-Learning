@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request, render_template, redirect, abort, jsonify, flash, url_for
 from flask_cors import CORS
+from flask_mail import Mail, Message
 from sqlalchemy import or_
 import numpy as np
 import tensorflow as tf
@@ -9,10 +10,10 @@ from flask import send_from_directory
 from keras.preprocessing import image
 import matplotlib.pyplot as plt
 
-UPLOAD_FOLDER = '.\\static\\uploads'
-SECRET_KEY="\x15\xd5\xafG?\x1cc?\xbe\x9b\xa9\x84<z\x92E+\xcbGW\x18\xddv\xb2"
+UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER')
+SECRET_KEY=os.environ.get('SECRET_KEY')
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
-
+PASSWORD = os.environ.get('GMAIL_APP_PASSWORD')
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -26,6 +27,16 @@ def create_app(test_config=None):
     app.config['SECRET_KEY'] = SECRET_KEY
     #setup_db(app)
     CORS(app, resources={r"/api/*": {"origins": "*"}})
+
+    app.config.update(dict(
+    DEBUG = True,
+    MAIL_SERVER = 'smtp.gmail.com',
+    MAIL_PORT = 587,
+    MAIL_USE_TLS = True,
+    MAIL_USE_SSL = False,
+    MAIL_USERNAME = 'johnaziz269@gmail.com',
+    MAIL_PASSWORD = PASSWORD,
+    ))
 
     # CORS Headers
     @app.after_request
@@ -99,14 +110,16 @@ def create_app(test_config=None):
             images = np.vstack([x])
             
             classes = model.predict(images, batch_size=10)
-            
+            percentage = round(classes[0][0] * 100, 2)
             if classes[0]>0.5:
                 prediction = "Positive"
             else:
                 prediction = "Negative"
+                percentage = 100 - percentage
             return jsonify({
-                'data': prediction,
-                'success': True
+                'prediction': prediction,
+                'success': True,
+                'percentage': percentage
                 }), 200
         return jsonify({
                 'success': False
