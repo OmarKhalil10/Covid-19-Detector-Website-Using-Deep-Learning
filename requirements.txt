@@ -4,5 +4,7 @@ flask-cors
 Flask-RESTful
 requests
 psycopg2
+flask-mail
+python-dotenv
 Flask-SQLAlchemy==2.1
 SQLAlchemy==1.3.12
