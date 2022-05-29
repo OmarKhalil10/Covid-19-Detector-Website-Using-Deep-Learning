@@ -180,8 +180,8 @@
             success.style.display = "block";
             form.reset();
             }
-        }).catch(function(){
-            const fail = document.getElementById('fail');
+        }).catch(function(error){
+            const fail = document.getElementById('fail');         
             fail.style.display = "block";
         });
     }
