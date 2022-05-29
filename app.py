@@ -4,16 +4,16 @@ from flask_cors import CORS
 from flask_mail import Mail, Message
 from sqlalchemy import or_
 import numpy as np
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 import tensorflow as tf
 from werkzeug.utils import secure_filename
 from flask import send_from_directory
 from keras.preprocessing import image
 import matplotlib.pyplot as plt
 
-UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER')
-SECRET_KEY=os.environ.get('SECRET_KEY')
+
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
-PASSWORD = os.environ.get('GMAIL_APP_PASSWORD')
+
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -23,21 +23,11 @@ def allowed_file(filename):
 def create_app(test_config=None):
     # Create and configure the app
     app = Flask(__name__)
-    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-    app.config['SECRET_KEY'] = SECRET_KEY
+    app.config.from_pyfile('settings.py')
     #setup_db(app)
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-    app.config.update(dict(
-    DEBUG = True,
-    MAIL_SERVER = 'smtp.gmail.com',
-    MAIL_PORT = 587,
-    MAIL_USE_TLS = True,
-    MAIL_USE_SSL = False,
-    MAIL_USERNAME = 'johnaziz269@gmail.com',
-    MAIL_PASSWORD = PASSWORD,
-    ))
-
+    mail = Mail(app)
     # CORS Headers
     @app.after_request
     def after_request(response):
@@ -53,8 +43,30 @@ def create_app(test_config=None):
     def about_page():
         return render_template("pages/about.html")
     
-    @app.route("/contact")
+    @app.route("/contact", methods=["GET", "POST"])
     def contact_page():
+        if request.method == 'POST':
+            body = request.get_json()
+            name = body.get('name', None)
+            email = body.get('email', None)
+            phone = body.get('phone', None)
+            message = body.get('message', None)
+            subject = 'New Message From '+ email +' Via Your Webstie'
+            body = "Hello,\n"\
+            "This is "+name+ " from your website.\n\n"\
+            "My Email: " +email+'.\n'\
+            "My Message: "+ message
+            try:
+                msg = Message(subject, sender='johnaziz269@gmail.com', recipients=['johnaziz269@gmail.com'])
+                msg.body = body
+                mail.send(msg)
+                return jsonify({
+                'success': True 
+                })
+            except:
+                return jsonify({
+                    'success': False 
+                })
         return render_template("pages/contact.html")
 
     @app.route("/faq")
