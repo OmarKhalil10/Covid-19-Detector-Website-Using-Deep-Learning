@@ -158,9 +158,9 @@
 {% block script %}
 <script>
     //Contanct Email Message and Alert Script
-    var form = document.getElementById('contact');
-    from.onsubmit = function(e){  
+    document.getElementById('contact').onsubmit = function(e){  
         e.preventDefault();
+        var form = document.getElementById('contact');
         fetch('/contact', {
             method: 'POST', 
             body: JSON.stringify({ 
@@ -175,14 +175,18 @@
         }).then(function(response){
             return response.json();
         }).then(function(jsonResponse){
-            if(jsonResponse['success']){
-            const alertMessage = document.getElementsByClassName('success-message');
-            alertMessage.show();
+            if(jsonResponse['success'] == true){
+            const fail = document.getElementById('fail');
+            const success = document.getElementById('success');
+            success.style.display = "block";
+            fail.style.display = "none";
             document.contact.reset();
             }
         }).catch(function(){
-            const alertMessage = document.getElementsByClassName('error-message');
-            alertMessage.show();
+            const fail = document.getElementById('fail');
+            const success = document.getElementById('success');            
+            fail.style.display = "block";
+            success.style.display = "none";
         });
     }
 </script>
