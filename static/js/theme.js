@@ -151,11 +151,11 @@
   }
   nice_select();
 
-  var inputs = $(".appoinment_form .form-control").not(":submit");
+  /**var inputs = $(".appoinment_form .form-control").not(":submit");
 
   inputs.on("input", function (idx) {
     $(inputs[inputs.index(this)]).toggleClass("animated", this.value > "");
-  });
+  });*/
 
   function datetime_picker() {
     if ($("#datetimepicker3").length > 0) {
