@@ -99,16 +99,28 @@
                             </div>
                         </div>
                     </div>
-                    -->
-            <div class="col-lg-6">
+                -->
+                <div class="col-lg-6">
+                    <div class="checker_form" id="checker_form">
+                        <div class="drag-area">
+                            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                            <header class="drag-drop">Drag & Drop to Upload File</header>
+                            <span>OR</span>
+                            <button class="upload-btn">Browse File</button>
+                            <input class="upload-file" type="file" hidden>
+                          </div>
+                    </div>
+                </div>
+
+    <!--    <div class="col-lg-6">
                 <div class="checker_form" id="checker_form">
                         <input id="fileUpload" type="file" name="file">
                         <div class="button">
                             <a class="submit_btn">Submit</a>
                         </div>
-                    </form>
                 </div>
             </div>
+    -->
         </div>
     </div>
     </div>
@@ -357,6 +369,8 @@
         })
     })
 </script>
+
+<script src="/static/js/upload.js"></script>
 <script src="/static/js/jquery-3.4.1.min.js"></script>
 <script src="/static/js/popper.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
