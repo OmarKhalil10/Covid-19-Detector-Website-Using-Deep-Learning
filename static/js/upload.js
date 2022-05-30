@@ -3,7 +3,7 @@ var dropArea = document.querySelector(".drag-area"),
 dragText = dropArea.querySelector(".drag-drop"),
 button = dropArea.querySelector(".upload-btn"),
 input = dropArea.querySelector(".upload-file");
-let file; //this is a global variable and we'll use it inside multiple functions
+var file; //this is a global variable and we'll use it inside multiple functions
 button.onclick = ()=>{
   input.click(); //if user click on the button then the input also clicked
 }

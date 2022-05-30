@@ -358,28 +358,28 @@
         })
     };
     function cancelUpload(){
-        const dArea = document.querySelector(".drag-area"),
-        uploadedImage = dArea.querySelector("#uploaded-image");
-        dArea.classList.remove("active");
-        dArea.removeChild(uploadedImage);
+        //selecting all required elements
+        var dropArea = document.querySelector(".drag-area");
+        var uploadedImage = dropArea.querySelector("#uploaded-image");
         var newArea = `<div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
                         <header class="drag-drop">Drag & Drop to Upload File</header>
                         <span>OR</span>
                         <button class="upload-btn">Browse File</button>
                         <input id="fileUpload" class="upload-file" type="file" hidden>`;
-        dArea.insertAdjacentHTML("afterbegin", newArea);
-
-        var dropArea = document.querySelector(".drag-area"),
-        dragText = dropArea.querySelector(".drag-drop"),
-        button = dropArea.querySelector(".upload-btn"),
-        input = dropArea.querySelector(".upload-file");
-        let file; //this is a global variable and we'll use it inside multiple functions
+        dropArea.classList.remove("active");
+        dropArea.removeChild(uploadedImage);
+        dropArea.insertAdjacentHTML("afterbegin", newArea);
+        var dragText = dropArea.querySelector(".drag-drop");
+        var button = dropArea.querySelector(".upload-btn");
+        var input = dropArea.querySelector(".upload-file");
+        var file; //this is a global variable and we'll use it inside multiple functions
         button.onclick = ()=>{
         input.click(); //if user click on the button then the input also clicked
         }
         input.addEventListener("change", function(){
         //getting user select file and [0] this means if user select multiple files then we'll select only the first one
         file = this.files[0];
+        fileName = file.name;
         dropArea.classList.add("active");
         showFile(); //calling function
         });
@@ -399,6 +399,7 @@
         event.preventDefault(); //preventing from default behaviour
         //getting user select file and [0] this means if user select multiple files then we'll select only the first one
         file = event.dataTransfer.files[0];
+        fileName = file.name;
         showFile(); //calling function
         });
         function showFile(){
@@ -408,7 +409,7 @@
             let fileReader = new FileReader(); //creating new FileReader object
             fileReader.onload = ()=>{
             let fileURL = fileReader.result; //passing user file source in fileURL variable
-            let imgTag = `<img id="uploaded-image" src="${fileURL}" alt="image">`; //creating an img tag and passing user selected file source inside src attribute
+            let imgTag = `<img id="uploaded-image" src="${fileURL}" alt="${file.name}">`; //creating an img tag and passing user selected file source inside src attribute
             dropArea.innerHTML = imgTag; //adding that created img tag inside dropArea container
             }
             fileReader.readAsDataURL(file);
@@ -418,7 +419,6 @@
             dragText.textContent = "Drag & Drop to Upload File";
         }
         }
-
     };
 </script>
 
