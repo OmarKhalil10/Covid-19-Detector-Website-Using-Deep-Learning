@@ -62,68 +62,26 @@
                     </div>
                 </div>
             </div>
-            <!--
-                    <div class="col-lg-6">
-                        <div class="checker_form">
-                            <input type="text" data-role="tagsinput" value="fever,seneeze"
-                                placeholder="Start typing your symptoms...">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="radio_btn">
-                                        <h5>What’s your gender?</h5>
-                                        <div class="select_conversation">
-                                            <input type="radio" name="male" id="male" value="male">
-                                            <label for="male">Male</label>
-                                        </div>
-                                        <div class="select_conversation">
-                                            <input type="radio" name="male" id="female" value="female">
-                                            <label for="female">Female</label>
-                                        </div>
-                                    </div>
-                                    <select class="nice_select checker_select">
-                                        <option value="1">Select your Region</option>
-                                        <option value="2">Islam</option>
-                                        <option value="3">Islam</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-6">
-                                    <select class="nice_select checker_select">
-                                        <option value="1">What’s your age?</option>
-                                        <option value="2">25</option>
-                                        <option value="3">26</option>
-                                    </select>
-                                    <div class="button">
-                                        <a class="submit_btn" href="#">Submit</a>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="col-lg-6">
+                <div class="checker_form" id="checker-form">
+                    <div class="drag-area row text-center justify-content-center">
+                        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                        <header class="drag-drop">Drag & Drop to Upload File</header>
+                        <span>OR</span>
+                        <button class="upload-btn">Browse File</button>
+                        <input id="fileUpload" class="upload-file" type="file" hidden>
+                    </div>
+                    <div class="row">
+                        <div class="col button text-left">
+                            <button id="cancel-upload" onclick="cancelUpload()" class="submit_btn">Cancel</button>
+                        </div>
+                        <div class="col button text-right">
+                            <button id="submit-upload" onclick="submitUpload()" class="submit_btn">Submit</button>
                         </div>
                     </div>
-                -->
-                <div class="col-lg-6">
-                    <div class="checker_form" id="checker-form">
-                        <div class="drag-area">
-                            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                            <header class="drag-drop">Drag & Drop to Upload File</header>
-                            <span>OR</span>
-                            <button class="upload-btn">Browse File</button>
-                            <input id="fileUpload" class="upload-file" type="file" hidden>
-                          </div>
-                    </div>
-                </div>
-
-    <!--    <div class="col-lg-6">
-                <div class="checker_form" id="checker_form">
-                        <input id="fileUpload" type="file" name="file">
-                        <div class="button">
-                            <a class="submit_btn">Submit</a>
-                        </div>
                 </div>
             </div>
-    -->
         </div>
-    </div>
-    </div>
     </div>
 </section>
 
@@ -348,28 +306,36 @@
 {% endblock %}
 {% block script %}
 <script>
-    document.querySelector('#fileUpload').addEventListener('change', event => {
-        let files = event.target.files
-        let fileName = files[0].name
-        // your code start here
-        var data = new FormData()
-        data.append('files', files[0]) // maybe it should be '{target}_cand'
-        data.append('name', fileName)
+    function submitUpload(){
+        document.querySelector('#fileUpload').addEventListener('change', event => {
+            let files = event.target.files
+            let fileName = files[0].name
+            // your code start here
+            var data = new FormData()
+            data.append('files', files[0]) // maybe it should be '{target}_cand'
+            data.append('name', fileName)
 
-        let url = "/prediction"
-        fetch(url,{
-            method:'POST',
-            body: data,
+            let url = "/prediction"
+            fetch(url,{
+                method:'POST',
+                body: data,
+            })
+            .then(function(response){
+            return response.json()
+            })
+            // .then(function(data){ // use different name to avoid confusion
+            .then(function(res){
+                htmlContent = "<h3 style='color: #fff;font: 700 20px quicksand, sans-serif;'>You are Covid "+res.prediction+" with certainty percentage "+ res.percentage +" %" +"</h3>"
+                document.getElementById("checker-form").insertAdjacentHTML("beforeend", htmlContent)
+            })
         })
-        .then(function(response){
-        return response.json()
-        })
-        // .then(function(data){ // use different name to avoid confusion
-        .then(function(res){
-            htmlContent = "<h3 style='color: #fff;font: 700 20px quicksand, sans-serif;'>You are Covid "+res.prediction+" with certainty percentage "+ res.percentage +" %" +"</h3>"
-            document.getElementById("checker-form").insertAdjacentHTML("beforeend", htmlContent)
-        })
-    })
+    };
+    function cancelUpload(){
+        const dArea = document.querySelector(".drag-area"),
+        dText = dArea.querySelector(".drag-drop");
+        dArea.classList.remove("active");
+        dText.textContent = "Drag & Drop to Upload File";
+    };
 </script>
 
 <script src="/static/js/upload.js"></script>

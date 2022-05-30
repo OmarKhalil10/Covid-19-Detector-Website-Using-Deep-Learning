@@ -245,6 +245,7 @@ button:focus {
 }
 
 .submit_btn {
+    border: none;
     background: #01cfbe;
     color: #fff;
     border-radius: 10px;
@@ -1616,7 +1617,7 @@ button:focus {
     box-shadow: 0 10px 40px 0 #33304e;
     padding-left: 30px;
     padding-top: 40px;
-    padding-bottom: 54px;
+    padding-bottom: 40px;
     padding-right: 30px
 }
 
@@ -1779,12 +1780,11 @@ button:focus {
 }
 
 .checker_form .button {
-    margin-top: 40px;
-    text-align: right
+    margin-top: 1em;
 }
 
 .checker_form .button .submit_btn {
-    margin-top: 40px
+    margin-top: 1em;
 }
 
 .check_now_area {
