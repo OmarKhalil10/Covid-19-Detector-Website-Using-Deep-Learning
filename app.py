@@ -77,17 +77,13 @@ def create_app(test_config=None):
             filePath = app.config['EMAIL_FILE_PATH']
             with open(filePath, "a") as f:
                 f.write(email+','+'\n')
-            return jsonify({
-                'success': True 
-                })
-            """
-            subject = 'New Message From '+ email +' Via Your Webstie'
-            body = "Hello,\n"\
-            "This is "+name+ " from your website.\n\n"\
-            "My Email: " +email+'.\n'\
-            "My Message: "+ message
+            
+            subject = 'You Have Sucessfully Subscribed to our Newsletter'
+            body = "Hello from CovDec Team,\n\n"\
+            "Thank you for subscribing to our monthly newsletter"+'.\n\n'\
+            "Regards,"
             try:
-                msg = Message(subject, sender='johnaziz269@gmail.com', recipients=['johnaziz269@gmail.com'])
+                msg = Message(subject, sender='johnaziz269@gmail.com', recipients=[email])
                 msg.body = body
                 mail.send(msg)
                 return jsonify({
@@ -97,7 +93,7 @@ def create_app(test_config=None):
                 return jsonify({
                     'success': False 
                 })
-            """
+            
         return jsonify({
                     'success': False 
                 }), 405

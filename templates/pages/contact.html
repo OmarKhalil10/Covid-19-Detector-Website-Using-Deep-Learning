@@ -135,10 +135,10 @@
             <div class="col-lg-6">
                 <div class="mail_box">
                     <div class="input-group">
-                        <input href="#" type="text" class="form-control" placeholder="&#xe997; Enter your email"
+                        <input id="news-letter-email" type="text" class="form-control" placeholder="&#xe997; Enter your email"
                             aria-label="Recipient's username" aria-describedby="button-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="newsletterSubscribe();">
                                 <i class="linearicons-arrow-right"></i>
                             </button>
                         </div>
@@ -184,7 +184,26 @@
             const fail = document.getElementById('fail');         
             fail.style.display = "block";
         });
-    }
+    };
+    function newsletterSubscribe(){
+      fetch('/newsletter-subscribe', {
+              method: 'POST', 
+              body: JSON.stringify({ 
+              'email': document.getElementById("news-letter-email").value
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+          }).then(function(response){
+              return response.json();
+          }).then(function(jsonResponse){
+              if(jsonResponse['success'] == true){
+                console.log();
+              }
+          }).catch(function(error){
+              console.log();
+          });
+    };
 </script>
 <script src="/static/js/jquery-3.4.1.min.js"></script>
 <script src="/static/js/popper.min.js"></script>

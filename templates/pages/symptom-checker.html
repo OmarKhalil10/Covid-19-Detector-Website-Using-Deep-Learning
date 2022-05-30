@@ -196,7 +196,7 @@
                             <li>Follow recommendations for isolation.</li>
                             <li>Take precautions when you travel.</li>
                         </ul>
-                        <a class="green_btn" href="#"><i class="linearicons-pulse"></i> Make another check</a>
+                        <a class="green_btn" href="/symptom-checker"><i class="linearicons-pulse"></i> Make another check</a>
                     </div>
                 </div>
             </div>
@@ -285,10 +285,10 @@
             <div class="col-lg-6">
                 <div class="mail_box">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="&#xe997; Enter your email"
+                        <input id="news-letter-email" type="text" class="form-control" placeholder="&#xe997; Enter your email"
                             aria-label="Recipient's username" aria-describedby="button-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="newsletterSubscribe();">
                                 <i class="linearicons-arrow-right"></i>
                             </button>
                         </div>
@@ -418,6 +418,25 @@
             dragText.textContent = "Drag & Drop to Upload File";
         }
         }
+    };
+    function newsletterSubscribe(){
+        fetch('/newsletter-subscribe', {
+                method: 'POST', 
+                body: JSON.stringify({ 
+                'email': document.getElementById("news-letter-email").value
+            }),
+            headers: {
+            'Content-Type': 'application/json'
+            }
+            }).then(function(response){
+                return response.json();
+            }).then(function(jsonResponse){
+                if(jsonResponse['success'] == true){
+                console.log();
+                }
+            }).catch(function(error){
+                console.log();
+            });
     };
 </script>
 

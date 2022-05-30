@@ -128,7 +128,7 @@
                 large and ongoing outbreak. It has since spread more
                 widely in China.
               </p>
-              <a class="text_btn" href="#">Read more about <i class="linearicons-arrow-right"></i></a>
+              <a class="text_btn" href="/about">Read more about <i class="linearicons-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@
   </div>
 </section>
 
-
+<!--
 <section class="world_wide_tracker pad_top">
   <div class="container">
     <img class="tracker_map" src="/static/images/tracker-map-bg.png" alt>
@@ -199,7 +199,7 @@
     </div>
   </div>
 </section>
-
+-->
 
 <section class="symptoms_area">
   <div class="container">
@@ -302,28 +302,28 @@
               </div>
               <ul class="nav flex-column">
                 <li>
-                  <a href="#"><i class="linearicons-home4"></i>Stay at home</a>
+                  <a><i class="linearicons-home4"></i>Stay at home</a>
                 </li>
                 <li>
-                  <a href="#"><i class="linearicons-desk-tape"></i>Wear mask</a>
+                  <a><i class="linearicons-desk-tape"></i>Wear mask</a>
                 </li>
                 <li>
-                  <a href="#"><i class="linearicons-tissue"></i>Always use
+                  <a><i class="linearicons-tissue"></i>Always use
                     tissues</a>
                 </li>
                 <li>
-                  <a href="#"><i class="linearicons-couch"></i>Disinfect your
+                  <a><i class="linearicons-couch"></i>Disinfect your
                     home</a>
                 </li>
                 <li>
-                  <a href="#"><i class="linearicons-rain"></i>Wash your hands</a>
+                  <a><i class="linearicons-rain"></i>Wash your hands</a>
                 </li>
                 <li>
-                  <a href="#"><i class="linearicons-thermometer"></i>Frequent
+                  <a><i class="linearicons-thermometer"></i>Frequent
                     self-isolation</a>
                 </li>
                 <li>
-                  <a href="#"><i class="linearicons-bottle"></i>Frequent
+                  <a><i class="linearicons-bottle"></i>Frequent
                     waterintake</a>
                 </li>
               </ul>
@@ -337,29 +337,29 @@
               </div>
               <ul class="nav flex-column">
                 <li>
-                  <a href="#"><i class="linearicons-man-woman"></i>Social
+                  <a><i class="linearicons-man-woman"></i>Social
                     distance</a>
                 </li>
                 <li>
-                  <a href="#"><i class="linearicons-paw"></i>Avoid animals</a>
+                  <a><i class="linearicons-paw"></i>Avoid animals</a>
                 </li>
                 <li>
-                  <a href="#"><i class="linearicons-woman"></i>Don't touch your
+                  <a><i class="linearicons-woman"></i>Don't touch your
                     face</a>
                 </li>
                 <li>
-                  <a href="#"><i class="linearicons-hand"></i>Avoid handshaking</a>
+                  <a><i class="linearicons-hand"></i>Avoid handshaking</a>
                 </li>
                 <li>
-                  <a href="#"><i class="linearicons-chair"></i>Avoid infected
+                  <a><i class="linearicons-chair"></i>Avoid infected
                     surfaces</a>
                 </li>
                 <li>
-                  <a href="#"><i class="linearicons-drop-crossed"></i>Avoid
+                  <a><i class="linearicons-drop-crossed"></i>Avoid
                     droplets</a>
                 </li>
                 <li>
-                  <a href="#"><i class="linearicons-plane-crossed"></i>Don’t
+                  <a><i class="linearicons-plane-crossed"></i>Don’t
                     travel</a>
                 </li>
               </ul>
@@ -1897,7 +1897,7 @@
       <div class="col-lg-6">
         <div class="mail_box">
           <div class="input-group">
-            <input id="new-letter-email" type="text" class="form-control" placeholder="&#xe997; Enter your email"
+            <input id="news-letter-email" type="text" class="form-control" placeholder="&#xe997; Enter your email"
               aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="newsletterSubscribe();">
@@ -1922,7 +1922,7 @@
     fetch('/newsletter-subscribe', {
             method: 'POST', 
             body: JSON.stringify({ 
-            'email': document.getElementById("new-letter-email").value
+            'email': document.getElementById("news-letter-email").value
         }),
         headers: {
           'Content-Type': 'application/json'
