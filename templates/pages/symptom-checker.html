@@ -203,7 +203,7 @@
                     </div>
                     <div class="bottom_text text-center">
                         <h6>Estimable state:</h6>
-                        <h3>Dangerous</h3>
+                        <h3 id="covid-status">Not Determined!</h3>
                     </div>
                 </div>
             </div>
@@ -365,10 +365,12 @@
         return response.json()
         })
         // .then(function(data){ // use different name to avoid confusion
+        /*
         .then(function(res){
             htmlContent = "<h3 style='color: #fff;font: 700 20px quicksand, sans-serif;'>You are Covid "+res.prediction+" with certainty percentage "+ res.percentage +" %" +"</h3>"
             document.getElementById("checker-form").insertAdjacentHTML("beforeend", htmlContent)
         })
+        */
     })
 </script>
 
